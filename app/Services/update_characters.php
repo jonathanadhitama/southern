@@ -50,10 +50,10 @@ function sanitiseAndValidateData($entry)
         'hair_colour' => $entry->hair_color,
         'gender' => $entry->gender
     ];
-    if (strtolower($entry->height) === 'unknown' || is_numeric($entry->height)) {
+    if (is_numeric($entry->height)) {
         $output['height'] = $entry->height;
     }
-    if (strtolower($entry->mass) === 'unknown' || is_numeric($entry->mass)){
+    if (is_numeric($entry->mass)){
         $output['mass'] = $entry->mass;
     }
     if (check_birth_year($entry->birth_year)) {

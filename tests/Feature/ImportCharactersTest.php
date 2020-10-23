@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Character;
 use App\Services\MainService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Http;
@@ -65,6 +66,19 @@ class ImportCharactersTest extends TestCase
         "language" => "n/a",
     ];
 
+    private const INVALID_HEIGHT_AND_MASS_DATA = [
+        "name" => "Luke Skywalker",
+        "height" => "unknown",
+        "mass" => "n/a",
+        "hair_color" => "blond",
+        "skin_color" => "fair",
+        "eye_color" => "blue",
+        "birth_year" => "19BBY",
+        "gender" => "male",
+        "homeworld" => "http://swapi.dev/api/planets/1/",
+        "species" => [],
+    ];
+
     private $emptyResultsCharacter = [
         "count" => 0,
         "next" => null,
@@ -96,6 +110,15 @@ class ImportCharactersTest extends TestCase
         "previous" => "http://swapi.dev/api/people/?page=1",
         "results" => [
             self::LUKE_SKYWALKER_DATA
+        ]
+    ];
+
+    private $singleResultCharacterWithInvalidWeightAndMass = [
+        "count" => 1,
+        "next" => null,
+        "previous" => null,
+        "results" => [
+            self::INVALID_HEIGHT_AND_MASS_DATA
         ]
     ];
 
@@ -156,6 +179,33 @@ class ImportCharactersTest extends TestCase
 
         $this->assertEquals(true, $output['success']);
         $this->assertEquals('Inserted 2 characters into DB', $output['messages'][0]);
+    }
+
+    /**
+     * A basic insert character test with next pagination
+     *
+     * @return void
+     */
+    public function testReceiveResultWithInvalidHeightAndMass(): void
+    {
+        Http::fake([
+            config('swapi.all_people_api') => Http::response($this->singleResultCharacterWithInvalidWeightAndMass, 200),
+            'http://swapi.dev/api/planets/1/' => Http::response(self::TATOOINE_DATA, 200),
+            'http://swapi.dev/api/species/2/' => Http::response(self::DROID_DATA, 200)
+        ]);
+
+        $output = (new MainService())->importCharactersToDB();
+        $this->assertDatabaseCount('swapi_characters', 1);
+
+        $this->assertEquals(true, $output['success']);
+        $this->assertEquals('Inserted 1 characters into DB', $output['messages'][0]);
+
+        $character = Character::where('name', self::INVALID_HEIGHT_AND_MASS_DATA['name'])->first();
+        $this->assertNotNull($character);
+
+        //Assert that the character height and mass are NULL because they are not updated
+        $this->assertNull($character->height);
+        $this->assertNull($character->mass);
     }
 
     protected function tearDown(): void

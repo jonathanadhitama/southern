@@ -20,4 +20,9 @@ class Character extends Model
     ];
 
     public $timestamps = false;
+
+    protected $casts = [
+        'height' => 'float',
+        'mass' => 'float'
+    ];
 }

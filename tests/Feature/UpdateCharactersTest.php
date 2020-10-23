@@ -128,8 +128,8 @@ class UpdateCharactersTest extends TestCase
         $this->assertTrue($output['success']);
 
         $character = Character::where('name', self::NAME)->first();
-        $this->assertEquals(self::ORIGINAL_HEIGHT, $character->height);
-        $this->assertEquals(self::ORIGINAL_MASS, $character->mass);
+        $this->assertEquals(floatval(self::ORIGINAL_HEIGHT), $character->height);
+        $this->assertEquals(floatval(self::ORIGINAL_MASS), $character->mass);
         $this->assertEquals(self::ORIGINAL_HAIR_COLOUR, $character->hair_colour);
         $this->assertEquals(self::ORIGINAL_BIRTH_YEAR, $character->birth_year);
         $this->assertEquals(self::ORIGINAL_GENDER, $character->gender);
@@ -149,8 +149,8 @@ class UpdateCharactersTest extends TestCase
         $this->assertTrue($output['success']);
 
         $character = Character::where('name', self::NAME)->first();
-        $this->assertEquals(self::VALID_HEIGHT, $character->height);
-        $this->assertEquals(self::VALID_MASS, $character->mass);
+        $this->assertEquals(floatval(self::VALID_HEIGHT), $character->height);
+        $this->assertEquals(floatval(self::VALID_MASS), $character->mass);
         $this->assertEquals(self::ORIGINAL_HAIR_COLOUR, $character->hair_colour);
         $this->assertEquals(self::VALID_BIRTH_YEAR, $character->birth_year);
         $this->assertEquals(self::ORIGINAL_GENDER, $character->gender);

@@ -31,8 +31,8 @@ function insertCharacterIntoDB() {
                         //Invalid data so skip current loop
                         continue;
                     }
-                    $homeworld = 'n/a';
-                    $species = 'n/a';
+                    $homeworld = null;
+                    $species = null;
 
                     //Handling homeworld
                     if (
@@ -143,11 +143,11 @@ function getHomeworldOrSpeciesData(string $url)
 /**
  * Function that formats and validates the given data before it is inserted in to the DB
  * @param array $character
- * @param string $homeworld
- * @param string $species
+ * @param string|null $homeworld
+ * @param string|null $species
  * @return array
  */
-function characterMapper(array $character, string $homeworld, string $species)
+function characterMapper(array $character, ?string $homeworld, ?string $species)
 {
     if (!array_key_exists('name', $character)) {
         //Name is required
@@ -169,7 +169,15 @@ function characterMapper(array $character, string $homeworld, string $species)
                 //Invalid birth_year we save as null
                 Log::info('Invalid value detected for ' . $attribute . ' with value of ' . $character[$attribute]);
                 $output[$modelAttribute] = null;
-            } else {
+            } else if ($attribute === 'height' || $attribute === 'mass') {
+                //Checking value for height and mass attribute
+                if (is_numeric($character[$attribute])) {
+                    $output[$modelAttribute] = $character[$attribute];
+                } else {
+                    Log::info('Invalid value detected for ' . $attribute . ' with value of ' . $character[$attribute]);
+                    $output[$modelAttribute] = null;
+                }
+            }else {
                 //For other attributes we save as normal
                 $output[$modelAttribute] = $character[$attribute];
             }
