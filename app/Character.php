@@ -18,4 +18,6 @@ class Character extends Model
         'homeworld',
         'species'
     ];
+
+    public $timestamps = false;
 }

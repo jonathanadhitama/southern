@@ -13,7 +13,7 @@
                     @endforeach
                 </ul>
             @else
-                <p class="container-text-southern">No characters for Return of The Jedi</p>
+                <p class="container-text-southern container-error-southern">No characters for Return of The Jedi</p>
             @endif
         </div>
     </body>

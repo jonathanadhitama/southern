@@ -5,6 +5,10 @@ namespace App\Services;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * Function that fetches the list of Return of The Jedi character names
+ * @return array
+ */
 function getAllReturnOfTheJediCharacters()
 {
     $response = Http::get(config('swapi.all_films_api'));

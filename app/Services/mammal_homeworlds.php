@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 require_once 'utility.php';
 
+/**
+ * Function that fetches the list of species that are classified as mammals as well as their homeworld
+ * @return array
+ */
 function getAllMammalHomeworlds()
 {
     $allMammalSpecies = [];

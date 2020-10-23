@@ -9,8 +9,17 @@ use Box\Spout\Reader\Exception\ReaderNotOpenedException;
 use Illuminate\Support\Facades\Log;
 use Rap2hpoutre\FastExcel\FastExcel;
 
+/**
+ * Class ImportCSVService Service class to quickly import CSV Data
+ * @package App\Services
+ */
 class ImportCSVService
 {
+    /**
+     * Importing CSV Data into a Collection Object
+     * @param $path
+     * @return \Illuminate\Support\Collection|null
+     */
     public static function import($path)
     {
         try {

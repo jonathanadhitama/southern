@@ -25,4 +25,10 @@ class MainController extends Controller
         $output = (new MainService())->importCharactersToDB();
         return view('import_characters', ['output' => $output]);
     }
+
+    public function updateCharacterIntoDB()
+    {
+        $output = (new MainService())->updateCharactersToDB();
+        return view('update_characters', ['output' => $output]);
+    }
 }

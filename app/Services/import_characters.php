@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 require_once 'utility.php';
 
+/**
+ * Function that inserts Characters into DB
+ * @return array
+ */
 function insertCharacterIntoDB() {
     $allCharacters = [];
     $cacheHomeworld = [];
@@ -116,7 +120,12 @@ function insertCharacterIntoDB() {
     }
 }
 
-function getHomeworldOrSpeciesData($url)
+/**
+ * Function that retrieves species / homeworld name
+ * @param string $url
+ * @return string|null
+ */
+function getHomeworldOrSpeciesData(string $url)
 {
     $response = Http::get($url);
     if ($response->successful()) {
@@ -131,7 +140,14 @@ function getHomeworldOrSpeciesData($url)
     }
 }
 
-function characterMapper($character, $homeworld, $species)
+/**
+ * Function that formats and validates the given data before it is inserted in to the DB
+ * @param array $character
+ * @param string $homeworld
+ * @param string $species
+ * @return array
+ */
+function characterMapper(array $character, string $homeworld, string $species)
 {
     if (!array_key_exists('name', $character)) {
         //Name is required
@@ -146,7 +162,17 @@ function characterMapper($character, $homeworld, $species)
         $attribute = $otherAttributesToSave[$i];
         $modelAttribute = $actualModelAttributes[$i];
         if (array_key_exists($attribute, $character)) {
-            $output[$modelAttribute] = $character[$attribute];
+            //Checking birth_year
+            if ($attribute === 'birth_year' && check_birth_year($character[$attribute])) {
+                $output[$modelAttribute] = $character[$attribute];
+            } else if ($attribute === 'birth_year') {
+                //Invalid birth_year we save as null
+                Log::info('Invalid value detected for ' . $attribute . ' with value of ' . $character[$attribute]);
+                $output[$modelAttribute] = null;
+            } else {
+                //For other attributes we save as normal
+                $output[$modelAttribute] = $character[$attribute];
+            }
         }
     }
     return $output;

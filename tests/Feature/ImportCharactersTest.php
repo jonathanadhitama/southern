@@ -6,6 +6,7 @@ use App\Services\MainService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
+use UpdatedCharactersSeeder;
 
 class ImportCharactersTest extends TestCase
 {
@@ -155,5 +156,11 @@ class ImportCharactersTest extends TestCase
 
         $this->assertEquals(true, $output['success']);
         $this->assertEquals('Inserted 2 characters into DB', $output['messages'][0]);
+    }
+
+    protected function tearDown(): void
+    {
+        //Run seeder to populate updated_characters_data table
+        (new UpdatedCharactersSeeder())->run();
     }
 }

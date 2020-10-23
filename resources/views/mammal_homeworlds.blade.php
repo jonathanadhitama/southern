@@ -13,7 +13,7 @@
                 @endforeach
             </ul>
         @else
-            <p>No mammal species found</p>
+            <p class="container-text-southern container-error-southern">No mammal species found</p>
         @endif
     </div>
 </body>

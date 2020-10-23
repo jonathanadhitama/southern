@@ -9,6 +9,10 @@
 .container-text-southern {
     line-height: 1.5;
 }
+
+.container-error-southern {
+    color: red;
+}
 @charset "UTF-8";
 
 /*!
