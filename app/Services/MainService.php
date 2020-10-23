@@ -4,6 +4,7 @@
 namespace App\Services;
 require_once 'characters_jedi.php';
 require_once 'mammal_homeworlds.php';
+require_once 'import_characters.php';
 
 class MainService
 {
@@ -15,5 +16,10 @@ class MainService
     public function getAllMammals()
     {
         return getAllMammalHomeworlds();
+    }
+
+    public function importCharactersToDB()
+    {
+        return insertCharacterIntoDB();
     }
 }

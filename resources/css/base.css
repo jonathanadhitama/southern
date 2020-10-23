@@ -1,0 +1,11 @@
+.container-southern {
+    max-width: 1024px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: system-ui, sans-serif;
+    color: #333;
+}
+
+.container-text-southern {
+    line-height: 1.5;
+}

@@ -19,4 +19,10 @@ class MainController extends Controller
         $species = (new MainService())->getAllMammals();
         return view('mammal_homeworlds', ['species' => $species]);
     }
+
+    public function importCharacterIntoDB()
+    {
+        $output = (new MainService())->importCharactersToDB();
+        return view('import_characters', ['output' => $output]);
+    }
 }

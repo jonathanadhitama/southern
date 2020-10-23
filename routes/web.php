@@ -23,3 +23,4 @@ Route::get('/react', function () {
 
 Route::get('/characters_jedi', 'MainController@handleCharactersROTJ');
 Route::get('/mammal_homeworlds', 'MainController@handleMammalHomeworlds');
+Route::get('/import_characters', 'MainController@importCharacterIntoDB');

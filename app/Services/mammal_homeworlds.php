@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+require_once 'utility.php';
 
 function getAllMammalHomeworlds()
 {
@@ -15,17 +16,8 @@ function getAllMammalHomeworlds()
         $response = Http::get($next);
         if ($response->successful()) {
             $species = $response->json();
-            if (is_array($species) && array_key_exists('next', $species)) {
-                if (!is_null($species['next'])) {
-                    Log::info('Next is ' . $species['next']);
-                } else {
-                    Log::info('Next is NULL');
-                }
-                $next = $species['next'];
-            } else {
-                Log::info('Next is null');
-                $next = null;
-            }
+            //Get next URL for pagination
+            $next = getNextUrlPagination($species);
             if (is_array($species) && array_key_exists('results', $species)) {
                 //Filter all species that is mammal and append to $allMammalSpecies and map
                 //data to only have species name and species homeworld only
@@ -61,6 +53,7 @@ function getAllMammalHomeworlds()
                 Log::info('Added ' . count($filteredSpecies) . ' species to main output array');
             }
         } else {
+            Log::info('Unable to retrieve URL ' . $next);
             break;
         }
     }
