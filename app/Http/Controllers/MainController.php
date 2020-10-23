@@ -13,4 +13,10 @@ class MainController extends Controller
         $characters = (new MainService())->getAllCharacters();
         return view('characters_jedi', ['characters' => $characters]);
     }
+
+    public function handleMammalHomeworlds()
+    {
+        $species = (new MainService())->getAllMammals();
+        return view('mammal_homeworlds', ['species' => $species]);
+    }
 }

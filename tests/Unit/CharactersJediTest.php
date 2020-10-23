@@ -4,27 +4,52 @@ namespace Tests\Unit;
 
 use App\Services\MainService;
 use Illuminate\Support\Facades\Http;
-use PHPUnit\Framework\TestCase;
 
 class CharactersJediTest extends \Tests\TestCase
 {
+    private const A_NEW_HOPE_DATA = [
+        "title" => "A New Hope",
+        "episode_id" => 4,
+        "opening_crawl" => "It is a period of civil war.",
+        "director" => "George Lucas",
+        "producer" => "Gary Kurtz, Rick McCallum",
+        "release_date" => "1977-05-25",
+        "characters" => [
+            "http://swapi.dev/api/people/1/",
+            "http://swapi.dev/api/people/2/",
+        ]
+    ];
+
+    private const RETURN_OF_THE_JEDI_NO_CHAR_DATA = [
+        "title" => "Return of the Jedi",
+        "episode_id" => 6,
+        "opening_crawl" => "Luke Skywalker has returned to his",
+        "director" => "Richard Marquand",
+        "producer" => "Howard G. Kazanjian, George Lucas, Rick McCallum",
+        "release_date" => "1983-05-25",
+        "characters" => [
+        ]
+    ];
+
+    private const RETURN_OF_THE_JEDI_DATA = [
+        "title" => "Return of the Jedi",
+        "episode_id" => 6,
+        "opening_crawl" => "Luke Skywalker has returned to his",
+        "director" => "Richard Marquand",
+        "producer" => "Howard G. Kazanjian, George Lucas, Rick McCallum",
+        "release_date" => "1983-05-25",
+        "characters" => [
+            "http://swapi.dev/api/people/1/",
+            "http://swapi.dev/api/people/2/",
+        ]
+    ];
+
     private $resultMovieNotAvailable = [
         "count" => 1,
         "next" => null,
         "previous" => null,
         "results" => [
-            [
-                "title" => "A New Hope",
-                "episode_id" => 4,
-                "opening_crawl" => "It is a period of civil war.",
-                "director" => "George Lucas",
-                "producer" => "Gary Kurtz, Rick McCallum",
-                "release_date" => "1977-05-25",
-                "characters" => [
-                    "http://swapi.dev/api/people/1/",
-                    "http://swapi.dev/api/people/2/",
-                ]
-            ]
+            self::A_NEW_HOPE_DATA
         ]
     ];
 
@@ -33,28 +58,8 @@ class CharactersJediTest extends \Tests\TestCase
         "next" => null,
         "previous" => null,
         "results" => [
-            [
-                "title" => "A New Hope",
-                "episode_id" => 4,
-                "opening_crawl" => "It is a period of civil war.",
-                "director" => "George Lucas",
-                "producer" => "Gary Kurtz, Rick McCallum",
-                "release_date" => "1977-05-25",
-                "characters" => [
-                    "http://swapi.dev/api/people/1/",
-                    "http://swapi.dev/api/people/2/",
-                ]
-            ],
-            [
-                "title" => "Return of the Jedi",
-                "episode_id" => 6,
-                "opening_crawl" => "Luke Skywalker has returned to his",
-                "director" => "Richard Marquand",
-                "producer" => "Howard G. Kazanjian, George Lucas, Rick McCallum",
-                "release_date" => "1983-05-25",
-                "characters" => [
-                ]
-            ]
+            self::A_NEW_HOPE_DATA,
+            self::RETURN_OF_THE_JEDI_NO_CHAR_DATA
         ]
     ];
 
@@ -63,30 +68,8 @@ class CharactersJediTest extends \Tests\TestCase
         "next" => null,
         "previous" => null,
         "results" => [
-            [
-                "title" => "A New Hope",
-                "episode_id" => 4,
-                "opening_crawl" => "It is a period of civil war.",
-                "director" => "George Lucas",
-                "producer" => "Gary Kurtz, Rick McCallum",
-                "release_date" => "1977-05-25",
-                "characters" => [
-                    "http://swapi.dev/api/people/1/",
-                    "http://swapi.dev/api/people/2/",
-                ]
-            ],
-            [
-                "title" => "Return of the Jedi",
-                "episode_id" => 6,
-                "opening_crawl" => "Luke Skywalker has returned to his",
-                "director" => "Richard Marquand",
-                "producer" => "Howard G. Kazanjian, George Lucas, Rick McCallum",
-                "release_date" => "1983-05-25",
-                "characters" => [
-                    "http://swapi.dev/api/people/1/",
-                    "http://swapi.dev/api/people/2/",
-                ]
-            ]
+            self::A_NEW_HOPE_DATA,
+            self::RETURN_OF_THE_JEDI_DATA
         ]
     ];
 

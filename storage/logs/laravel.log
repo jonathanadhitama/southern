@@ -118,3 +118,50 @@
 [2020-10-23 00:25:44] testing.INFO: Attempt to get character detail of http://swapi.dev/api/people/2/  
 [2020-10-23 00:25:44] testing.INFO: Successful in getting character detail of http://swapi.dev/api/people/2/  
 [2020-10-23 00:25:44] testing.INFO: Inserting into output array C-3PO  
+[2020-10-23 01:49:30] testing.INFO: Successful API Call of SWAPI all films API  
+[2020-10-23 01:49:30] testing.INFO: Successful API Call of SWAPI all films API  
+[2020-10-23 01:49:30] testing.INFO: Successfully filtered Return of Jedi from all films  
+[2020-10-23 01:49:30] testing.INFO: Successful API Call of SWAPI all films API  
+[2020-10-23 01:49:30] testing.INFO: Successfully filtered Return of Jedi from all films  
+[2020-10-23 01:49:30] testing.INFO: Attempt to get character detail of http://swapi.dev/api/people/1/  
+[2020-10-23 01:49:30] testing.INFO: Successful in getting character detail of http://swapi.dev/api/people/1/  
+[2020-10-23 01:49:30] testing.INFO: Inserting into output array Luke Skywalker  
+[2020-10-23 01:49:30] testing.INFO: Attempt to get character detail of http://swapi.dev/api/people/2/  
+[2020-10-23 01:49:30] testing.INFO: Successful in getting character detail of http://swapi.dev/api/people/2/  
+[2020-10-23 01:49:30] testing.INFO: Inserting into output array C-3PO  
+[2020-10-23 01:49:30] testing.INFO: Next is NULL  
+[2020-10-23 01:49:30] testing.INFO: Added 0 species to main output array  
+[2020-10-23 01:49:30] testing.INFO: No more species to retrieve, breaking off main loop.  
+[2020-10-23 01:49:30] testing.INFO: Next is NULL  
+[2020-10-23 01:49:30] testing.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/9/  
+[2020-10-23 01:49:30] testing.INFO: Added 1 species to main output array  
+[2020-10-23 01:49:30] testing.INFO: No more species to retrieve, breaking off main loop.  
+[2020-10-23 01:49:30] testing.INFO: Next is NULL  
+[2020-10-23 01:49:30] testing.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/9/  
+[2020-10-23 01:49:30] testing.INFO: Added 1 species to main output array  
+[2020-10-23 01:49:30] testing.INFO: No more species to retrieve, breaking off main loop.  
+[2020-10-23 01:49:35] local.INFO: Next is http://swapi.dev/api/species/?page=2  
+[2020-10-23 01:49:36] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/9/  
+[2020-10-23 01:49:38] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/14/  
+[2020-10-23 01:49:40] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/28/  
+[2020-10-23 01:49:42] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/7/  
+[2020-10-23 01:49:44] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/33/  
+[2020-10-23 01:49:44] local.INFO: Added 5 species to main output array  
+[2020-10-23 01:49:46] local.INFO: Next is http://swapi.dev/api/species/?page=3  
+[2020-10-23 01:49:48] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/34/  
+[2020-10-23 01:49:50] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/35/  
+[2020-10-23 01:49:52] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/43/  
+[2020-10-23 01:49:52] local.INFO: Added 3 species to main output array  
+[2020-10-23 01:49:54] local.INFO: Next is http://swapi.dev/api/species/?page=4  
+[2020-10-23 01:49:56] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/45/  
+[2020-10-23 01:49:58] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/46/  
+[2020-10-23 01:50:00] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/48/  
+[2020-10-23 01:50:02] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/51/  
+[2020-10-23 01:50:02] local.INFO: Added 4 species to main output array  
+[2020-10-23 01:50:04] local.INFO: Next is NULL  
+[2020-10-23 01:50:06] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/56/  
+[2020-10-23 01:50:08] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/57/  
+[2020-10-23 01:50:10] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/58/  
+[2020-10-23 01:50:12] local.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/12/  
+[2020-10-23 01:50:12] local.INFO: Added 4 species to main output array  
+[2020-10-23 01:50:12] local.INFO: No more species to retrieve, breaking off main loop.  

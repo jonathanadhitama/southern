@@ -1,0 +1,68 @@
+<?php
+
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+
+function getAllMammalHomeworlds()
+{
+    $allMammalSpecies = [];
+    $next = config('swapi.all_species_api');
+    while (true) {
+        if (is_null($next)) {
+            Log::info('No more species to retrieve, breaking off main loop.');
+            break;
+        }
+        $response = Http::get($next);
+        if ($response->successful()) {
+            $species = $response->json();
+            if (is_array($species) && array_key_exists('next', $species)) {
+                if (!is_null($species['next'])) {
+                    Log::info('Next is ' . $species['next']);
+                } else {
+                    Log::info('Next is NULL');
+                }
+                $next = $species['next'];
+            } else {
+                Log::info('Next is null');
+                $next = null;
+            }
+            if (is_array($species) && array_key_exists('results', $species)) {
+                //Filter all species that is mammal and append to $allMammalSpecies and map
+                //data to only have species name and species homeworld only
+                $filteredSpecies = array_map(function ($entry) {
+                    $homeworld = 'N/A';
+                    if (!is_null($entry['homeworld'])) {
+                        $response = Http::get($entry['homeworld']);
+                        if ($response->successful()) {
+                            Log::info('Successful attempt to get planet detail of ' . $entry['homeworld']);
+                            $data = $response->json();
+                            if (array_key_exists('name', $data)) {
+                                $homeworld = $data['name'];
+                            }
+                        } else {
+                            Log::info('Unsuccessful attempt to get planet detail of ' . $entry['homeworld']);
+                        }
+                    }
+                    return [
+                        'name' => $entry['name'],
+                        'homeworld' => $homeworld
+                    ];
+                },
+                    array_values(array_filter($species['results'], function ($entry) {
+                        return is_array($entry) &&
+                            array_key_exists('name', $entry) &&
+                            array_key_exists('name', $entry) &&
+                            array_key_exists('homeworld', $entry) &&
+                            array_key_exists('classification', $entry) &&
+                            strtolower($entry['classification']) === 'mammal';
+                    }))
+                );
+                $allMammalSpecies = array_merge($allMammalSpecies, $filteredSpecies);
+                Log::info('Added ' . count($filteredSpecies) . ' species to main output array');
+            }
+        } else {
+            break;
+        }
+    }
+    return $allMammalSpecies;
+}
