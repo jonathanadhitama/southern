@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('/react', function () {
     return view('react');
 });
+
+Route::get('/characters_jedi', 'MainController@handleCharactersROTJ');
