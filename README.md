@@ -28,7 +28,7 @@
 - Developed with PHP 7.4.11
 - Developed with MaridDB 10.5.6
 - Used `https://swapi.dev/` for API calls
-- Used Laravel version 7 to satisfy with requirements that application is executable with PHP 7.2
+- Used Laravel version 7 to satisfy the requirement that application is executable with PHP 7.2
 - Using Laravel Blade template with the exact script name to display HTML as it is the recommended way of utilising Laravel's powerful MVC 
 - Created a main service class (`App\Services\MainService`) which has public methods that execute the individual scripts. This is for easier import and testing.
     - `public function getAllCharacters` --> `characters_jedi.php`
