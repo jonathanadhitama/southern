@@ -1051,3 +1051,319 @@
 [2020-10-23 23:32:33] local.INFO: Valid homeworld Malastare  
 [2020-10-23 23:32:34] local.INFO: Valid species Dug  
 [2020-10-23 23:32:34] local.INFO: Updating character name Yoda  
+[2020-10-24 01:24:01] local.INFO: Next is http://swapi.dev/api/people/?page=2  
+[2020-10-24 01:24:01] local.INFO: Found 10 new characters.  
+[2020-10-24 01:24:03] local.INFO: Caching http://swapi.dev/api/planets/1/ with value Tatooine  
+[2020-10-24 01:24:03] local.INFO: Inserting Luke Skywalker for later DB Insertion  
+[2020-10-24 01:24:03] local.INFO: Homeworld Tatooine exists in cache.  
+[2020-10-24 01:24:05] local.INFO: Caching http://swapi.dev/api/species/2/ with value Droid  
+[2020-10-24 01:24:05] local.INFO: Inserting C-3PO for later DB Insertion  
+[2020-10-24 01:24:07] local.INFO: Caching http://swapi.dev/api/planets/8/ with value Naboo  
+[2020-10-24 01:24:07] local.INFO: Species Droid exists in cache.  
+[2020-10-24 01:24:07] local.INFO: Inserting R2-D2 for later DB Insertion  
+[2020-10-24 01:24:07] local.INFO: Homeworld Tatooine exists in cache.  
+[2020-10-24 01:24:07] local.INFO: Inserting Darth Vader for later DB Insertion  
+[2020-10-24 01:24:09] local.INFO: Caching http://swapi.dev/api/planets/2/ with value Alderaan  
+[2020-10-24 01:24:09] local.INFO: Inserting Leia Organa for later DB Insertion  
+[2020-10-24 01:24:09] local.INFO: Homeworld Tatooine exists in cache.  
+[2020-10-24 01:24:09] local.INFO: Inserting Owen Lars for later DB Insertion  
+[2020-10-24 01:24:09] local.INFO: Homeworld Tatooine exists in cache.  
+[2020-10-24 01:24:09] local.INFO: Inserting Beru Whitesun lars for later DB Insertion  
+[2020-10-24 01:24:09] local.INFO: Homeworld Tatooine exists in cache.  
+[2020-10-24 01:24:09] local.INFO: Species Droid exists in cache.  
+[2020-10-24 01:24:09] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:24:09] local.INFO: Inserting R5-D4 for later DB Insertion  
+[2020-10-24 01:24:09] local.INFO: Homeworld Tatooine exists in cache.  
+[2020-10-24 01:24:09] local.INFO: Inserting Biggs Darklighter for later DB Insertion  
+[2020-10-24 01:24:11] local.INFO: Caching http://swapi.dev/api/planets/20/ with value Stewjon  
+[2020-10-24 01:24:11] local.INFO: Inserting Obi-Wan Kenobi for later DB Insertion  
+[2020-10-24 01:24:13] local.INFO: Next is http://swapi.dev/api/people/?page=3  
+[2020-10-24 01:24:13] local.INFO: Found 10 new characters.  
+[2020-10-24 01:24:13] local.INFO: Homeworld Tatooine exists in cache.  
+[2020-10-24 01:24:13] local.INFO: Inserting Anakin Skywalker for later DB Insertion  
+[2020-10-24 01:24:15] local.INFO: Caching http://swapi.dev/api/planets/21/ with value Eriadu  
+[2020-10-24 01:24:15] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:24:15] local.INFO: Inserting Wilhuff Tarkin for later DB Insertion  
+[2020-10-24 01:24:17] local.INFO: Caching http://swapi.dev/api/planets/14/ with value Kashyyyk  
+[2020-10-24 01:24:19] local.INFO: Caching http://swapi.dev/api/species/3/ with value Wookie  
+[2020-10-24 01:24:19] local.INFO: Inserting Chewbacca for later DB Insertion  
+[2020-10-24 01:24:21] local.INFO: Caching http://swapi.dev/api/planets/22/ with value Corellia  
+[2020-10-24 01:24:21] local.INFO: Inserting Han Solo for later DB Insertion  
+[2020-10-24 01:24:23] local.INFO: Caching http://swapi.dev/api/planets/23/ with value Rodia  
+[2020-10-24 01:24:25] local.INFO: Caching http://swapi.dev/api/species/4/ with value Rodian  
+[2020-10-24 01:24:25] local.INFO: Inserting Greedo for later DB Insertion  
+[2020-10-24 01:24:27] local.INFO: Caching http://swapi.dev/api/planets/24/ with value Nal Hutta  
+[2020-10-24 01:24:29] local.INFO: Caching http://swapi.dev/api/species/5/ with value Hutt  
+[2020-10-24 01:24:29] local.INFO: Invalid value detected for mass with value of 1,358  
+[2020-10-24 01:24:29] local.INFO: Inserting Jabba Desilijic Tiure for later DB Insertion  
+[2020-10-24 01:24:29] local.INFO: Homeworld Corellia exists in cache.  
+[2020-10-24 01:24:29] local.INFO: Inserting Wedge Antilles for later DB Insertion  
+[2020-10-24 01:24:30] local.INFO: Caching http://swapi.dev/api/planets/26/ with value Bestine IV  
+[2020-10-24 01:24:30] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:24:30] local.INFO: Inserting Jek Tono Porkins for later DB Insertion  
+[2020-10-24 01:24:32] local.INFO: Caching http://swapi.dev/api/planets/28/ with value unknown  
+[2020-10-24 01:24:34] local.INFO: Caching http://swapi.dev/api/species/6/ with value Yoda's species  
+[2020-10-24 01:24:34] local.INFO: Inserting Yoda for later DB Insertion  
+[2020-10-24 01:24:34] local.INFO: Homeworld Naboo exists in cache.  
+[2020-10-24 01:24:34] local.INFO: Inserting Palpatine for later DB Insertion  
+[2020-10-24 01:24:36] local.INFO: Next is http://swapi.dev/api/people/?page=4  
+[2020-10-24 01:24:36] local.INFO: Found 10 new characters.  
+[2020-10-24 01:24:38] local.INFO: Caching http://swapi.dev/api/planets/10/ with value Kamino  
+[2020-10-24 01:24:38] local.INFO: Inserting Boba Fett for later DB Insertion  
+[2020-10-24 01:24:38] local.INFO: Homeworld unknown exists in cache.  
+[2020-10-24 01:24:38] local.INFO: Species Droid exists in cache.  
+[2020-10-24 01:24:38] local.INFO: Inserting IG-88 for later DB Insertion  
+[2020-10-24 01:24:40] local.INFO: Caching http://swapi.dev/api/planets/29/ with value Trandosha  
+[2020-10-24 01:24:42] local.INFO: Caching http://swapi.dev/api/species/7/ with value Trandoshan  
+[2020-10-24 01:24:42] local.INFO: Inserting Bossk for later DB Insertion  
+[2020-10-24 01:24:44] local.INFO: Caching http://swapi.dev/api/planets/30/ with value Socorro  
+[2020-10-24 01:24:44] local.INFO: Inserting Lando Calrissian for later DB Insertion  
+[2020-10-24 01:24:46] local.INFO: Caching http://swapi.dev/api/planets/6/ with value Bespin  
+[2020-10-24 01:24:46] local.INFO: Inserting Lobot for later DB Insertion  
+[2020-10-24 01:24:48] local.INFO: Caching http://swapi.dev/api/planets/31/ with value Mon Cala  
+[2020-10-24 01:24:50] local.INFO: Caching http://swapi.dev/api/species/8/ with value Mon Calamari  
+[2020-10-24 01:24:50] local.INFO: Inserting Ackbar for later DB Insertion  
+[2020-10-24 01:24:52] local.INFO: Caching http://swapi.dev/api/planets/32/ with value Chandrila  
+[2020-10-24 01:24:52] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:24:52] local.INFO: Inserting Mon Mothma for later DB Insertion  
+[2020-10-24 01:24:52] local.INFO: Homeworld unknown exists in cache.  
+[2020-10-24 01:24:52] local.INFO: Invalid value detected for height with value of unknown  
+[2020-10-24 01:24:52] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:24:52] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:24:52] local.INFO: Inserting Arvel Crynyd for later DB Insertion  
+[2020-10-24 01:24:53] local.INFO: Caching http://swapi.dev/api/planets/7/ with value Endor  
+[2020-10-24 01:24:55] local.INFO: Caching http://swapi.dev/api/species/9/ with value Ewok  
+[2020-10-24 01:24:55] local.INFO: Inserting Wicket Systri Warrick for later DB Insertion  
+[2020-10-24 01:24:57] local.INFO: Caching http://swapi.dev/api/planets/33/ with value Sullust  
+[2020-10-24 01:24:59] local.INFO: Caching http://swapi.dev/api/species/10/ with value Sullustan  
+[2020-10-24 01:24:59] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:24:59] local.INFO: Inserting Nien Nunb for later DB Insertion  
+[2020-10-24 01:25:02] local.INFO: Next is http://swapi.dev/api/people/?page=5  
+[2020-10-24 01:25:02] local.INFO: Found 10 new characters.  
+[2020-10-24 01:25:02] local.INFO: Homeworld unknown exists in cache.  
+[2020-10-24 01:25:02] local.INFO: Inserting Qui-Gon Jinn for later DB Insertion  
+[2020-10-24 01:25:04] local.INFO: Caching http://swapi.dev/api/planets/18/ with value Cato Neimoidia  
+[2020-10-24 01:25:06] local.INFO: Caching http://swapi.dev/api/species/11/ with value Neimodian  
+[2020-10-24 01:25:06] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:06] local.INFO: Inserting Nute Gunray for later DB Insertion  
+[2020-10-24 01:25:08] local.INFO: Caching http://swapi.dev/api/planets/9/ with value Coruscant  
+[2020-10-24 01:25:08] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:25:08] local.INFO: Inserting Finis Valorum for later DB Insertion  
+[2020-10-24 01:25:08] local.INFO: Homeworld Naboo exists in cache.  
+[2020-10-24 01:25:08] local.INFO: Inserting Padmé Amidala for later DB Insertion  
+[2020-10-24 01:25:08] local.INFO: Homeworld Naboo exists in cache.  
+[2020-10-24 01:25:10] local.INFO: Caching http://swapi.dev/api/species/12/ with value Gungan  
+[2020-10-24 01:25:10] local.INFO: Inserting Jar Jar Binks for later DB Insertion  
+[2020-10-24 01:25:10] local.INFO: Homeworld Naboo exists in cache.  
+[2020-10-24 01:25:10] local.INFO: Species Gungan exists in cache.  
+[2020-10-24 01:25:10] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:10] local.INFO: Inserting Roos Tarpals for later DB Insertion  
+[2020-10-24 01:25:10] local.INFO: Homeworld Naboo exists in cache.  
+[2020-10-24 01:25:10] local.INFO: Species Gungan exists in cache.  
+[2020-10-24 01:25:10] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:25:10] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:10] local.INFO: Inserting Rugor Nass for later DB Insertion  
+[2020-10-24 01:25:10] local.INFO: Homeworld Naboo exists in cache.  
+[2020-10-24 01:25:10] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:25:10] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:10] local.INFO: Inserting Ric Olié for later DB Insertion  
+[2020-10-24 01:25:11] local.INFO: Caching http://swapi.dev/api/planets/34/ with value Toydaria  
+[2020-10-24 01:25:13] local.INFO: Caching http://swapi.dev/api/species/13/ with value Toydarian  
+[2020-10-24 01:25:13] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:25:13] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:13] local.INFO: Inserting Watto for later DB Insertion  
+[2020-10-24 01:25:15] local.INFO: Caching http://swapi.dev/api/planets/35/ with value Malastare  
+[2020-10-24 01:25:17] local.INFO: Caching http://swapi.dev/api/species/14/ with value Dug  
+[2020-10-24 01:25:17] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:17] local.INFO: Inserting Sebulba for later DB Insertion  
+[2020-10-24 01:25:19] local.INFO: Next is http://swapi.dev/api/people/?page=6  
+[2020-10-24 01:25:19] local.INFO: Found 10 new characters.  
+[2020-10-24 01:25:19] local.INFO: Homeworld Naboo exists in cache.  
+[2020-10-24 01:25:19] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:25:19] local.INFO: Inserting Quarsh Panaka for later DB Insertion  
+[2020-10-24 01:25:19] local.INFO: Homeworld Tatooine exists in cache.  
+[2020-10-24 01:25:19] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:25:19] local.INFO: Inserting Shmi Skywalker for later DB Insertion  
+[2020-10-24 01:25:21] local.INFO: Caching http://swapi.dev/api/planets/36/ with value Dathomir  
+[2020-10-24 01:25:23] local.INFO: Caching http://swapi.dev/api/species/22/ with value Zabrak  
+[2020-10-24 01:25:23] local.INFO: Inserting Darth Maul for later DB Insertion  
+[2020-10-24 01:25:25] local.INFO: Caching http://swapi.dev/api/planets/37/ with value Ryloth  
+[2020-10-24 01:25:27] local.INFO: Caching http://swapi.dev/api/species/15/ with value Twi'lek  
+[2020-10-24 01:25:27] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:25:27] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:27] local.INFO: Inserting Bib Fortuna for later DB Insertion  
+[2020-10-24 01:25:27] local.INFO: Homeworld Ryloth exists in cache.  
+[2020-10-24 01:25:27] local.INFO: Species Twi'lek exists in cache.  
+[2020-10-24 01:25:27] local.INFO: Inserting Ayla Secura for later DB Insertion  
+[2020-10-24 01:25:29] local.INFO: Caching http://swapi.dev/api/planets/38/ with value Aleen Minor  
+[2020-10-24 01:25:31] local.INFO: Caching http://swapi.dev/api/species/16/ with value Aleena  
+[2020-10-24 01:25:31] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:31] local.INFO: Inserting Ratts Tyerel for later DB Insertion  
+[2020-10-24 01:25:33] local.INFO: Caching http://swapi.dev/api/planets/39/ with value Vulpter  
+[2020-10-24 01:25:35] local.INFO: Caching http://swapi.dev/api/species/17/ with value Vulptereen  
+[2020-10-24 01:25:35] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:35] local.INFO: Inserting Dud Bolt for later DB Insertion  
+[2020-10-24 01:25:37] local.INFO: Caching http://swapi.dev/api/planets/40/ with value Troiken  
+[2020-10-24 01:25:39] local.INFO: Caching http://swapi.dev/api/species/18/ with value Xexto  
+[2020-10-24 01:25:39] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:25:39] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:39] local.INFO: Inserting Gasgano for later DB Insertion  
+[2020-10-24 01:25:41] local.INFO: Caching http://swapi.dev/api/planets/41/ with value Tund  
+[2020-10-24 01:25:43] local.INFO: Caching http://swapi.dev/api/species/19/ with value Toong  
+[2020-10-24 01:25:43] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:43] local.INFO: Inserting Ben Quadinaros for later DB Insertion  
+[2020-10-24 01:25:45] local.INFO: Caching http://swapi.dev/api/planets/42/ with value Haruun Kal  
+[2020-10-24 01:25:45] local.INFO: Inserting Mace Windu for later DB Insertion  
+[2020-10-24 01:25:47] local.INFO: Next is http://swapi.dev/api/people/?page=7  
+[2020-10-24 01:25:47] local.INFO: Found 10 new characters.  
+[2020-10-24 01:25:48] local.INFO: Caching http://swapi.dev/api/planets/43/ with value Cerea  
+[2020-10-24 01:25:50] local.INFO: Caching http://swapi.dev/api/species/20/ with value Cerean  
+[2020-10-24 01:25:50] local.INFO: Inserting Ki-Adi-Mundi for later DB Insertion  
+[2020-10-24 01:25:52] local.INFO: Caching http://swapi.dev/api/planets/44/ with value Glee Anselm  
+[2020-10-24 01:25:54] local.INFO: Caching http://swapi.dev/api/species/21/ with value Nautolan  
+[2020-10-24 01:25:54] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:54] local.INFO: Inserting Kit Fisto for later DB Insertion  
+[2020-10-24 01:25:56] local.INFO: Caching http://swapi.dev/api/planets/45/ with value Iridonia  
+[2020-10-24 01:25:56] local.INFO: Species Zabrak exists in cache.  
+[2020-10-24 01:25:56] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:25:56] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:56] local.INFO: Inserting Eeth Koth for later DB Insertion  
+[2020-10-24 01:25:56] local.INFO: Homeworld Coruscant exists in cache.  
+[2020-10-24 01:25:58] local.INFO: Caching http://swapi.dev/api/species/23/ with value Tholothian  
+[2020-10-24 01:25:58] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:25:58] local.INFO: Inserting Adi Gallia for later DB Insertion  
+[2020-10-24 01:26:00] local.INFO: Caching http://swapi.dev/api/planets/47/ with value Iktotch  
+[2020-10-24 01:26:02] local.INFO: Caching http://swapi.dev/api/species/24/ with value Iktotchi  
+[2020-10-24 01:26:02] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:26:02] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:02] local.INFO: Inserting Saesee Tiin for later DB Insertion  
+[2020-10-24 01:26:04] local.INFO: Caching http://swapi.dev/api/planets/48/ with value Quermia  
+[2020-10-24 01:26:06] local.INFO: Caching http://swapi.dev/api/species/25/ with value Quermian  
+[2020-10-24 01:26:06] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:26:06] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:06] local.INFO: Inserting Yarael Poof for later DB Insertion  
+[2020-10-24 01:26:08] local.INFO: Caching http://swapi.dev/api/planets/49/ with value Dorin  
+[2020-10-24 01:26:10] local.INFO: Caching http://swapi.dev/api/species/26/ with value Kel Dor  
+[2020-10-24 01:26:10] local.INFO: Inserting Plo Koon for later DB Insertion  
+[2020-10-24 01:26:12] local.INFO: Caching http://swapi.dev/api/planets/50/ with value Champala  
+[2020-10-24 01:26:13] local.INFO: Caching http://swapi.dev/api/species/27/ with value Chagrian  
+[2020-10-24 01:26:13] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:26:13] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:13] local.INFO: Inserting Mas Amedda for later DB Insertion  
+[2020-10-24 01:26:13] local.INFO: Homeworld Naboo exists in cache.  
+[2020-10-24 01:26:13] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:13] local.INFO: Inserting Gregar Typho for later DB Insertion  
+[2020-10-24 01:26:13] local.INFO: Homeworld Naboo exists in cache.  
+[2020-10-24 01:26:13] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:26:13] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:13] local.INFO: Inserting Cordé for later DB Insertion  
+[2020-10-24 01:26:15] local.INFO: Next is http://swapi.dev/api/people/?page=8  
+[2020-10-24 01:26:15] local.INFO: Found 10 new characters.  
+[2020-10-24 01:26:15] local.INFO: Homeworld Tatooine exists in cache.  
+[2020-10-24 01:26:15] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:26:15] local.INFO: Inserting Cliegg Lars for later DB Insertion  
+[2020-10-24 01:26:17] local.INFO: Caching http://swapi.dev/api/planets/11/ with value Geonosis  
+[2020-10-24 01:26:19] local.INFO: Caching http://swapi.dev/api/species/28/ with value Geonosian  
+[2020-10-24 01:26:19] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:19] local.INFO: Inserting Poggle the Lesser for later DB Insertion  
+[2020-10-24 01:26:21] local.INFO: Caching http://swapi.dev/api/planets/51/ with value Mirial  
+[2020-10-24 01:26:23] local.INFO: Caching http://swapi.dev/api/species/29/ with value Mirialan  
+[2020-10-24 01:26:23] local.INFO: Inserting Luminara Unduli for later DB Insertion  
+[2020-10-24 01:26:23] local.INFO: Homeworld Mirial exists in cache.  
+[2020-10-24 01:26:23] local.INFO: Species Mirialan exists in cache.  
+[2020-10-24 01:26:23] local.INFO: Inserting Barriss Offee for later DB Insertion  
+[2020-10-24 01:26:23] local.INFO: Homeworld Naboo exists in cache.  
+[2020-10-24 01:26:25] local.INFO: Caching http://swapi.dev/api/species/1/ with value Human  
+[2020-10-24 01:26:25] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:26:25] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:25] local.INFO: Inserting Dormé for later DB Insertion  
+[2020-10-24 01:26:27] local.INFO: Caching http://swapi.dev/api/planets/52/ with value Serenno  
+[2020-10-24 01:26:27] local.INFO: Species Human exists in cache.  
+[2020-10-24 01:26:27] local.INFO: Inserting Dooku for later DB Insertion  
+[2020-10-24 01:26:27] local.INFO: Homeworld Alderaan exists in cache.  
+[2020-10-24 01:26:27] local.INFO: Species Human exists in cache.  
+[2020-10-24 01:26:27] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:26:27] local.INFO: Inserting Bail Prestor Organa for later DB Insertion  
+[2020-10-24 01:26:29] local.INFO: Caching http://swapi.dev/api/planets/53/ with value Concord Dawn  
+[2020-10-24 01:26:29] local.INFO: Inserting Jango Fett for later DB Insertion  
+[2020-10-24 01:26:31] local.INFO: Caching http://swapi.dev/api/planets/54/ with value Zolan  
+[2020-10-24 01:26:33] local.INFO: Caching http://swapi.dev/api/species/30/ with value Clawdite  
+[2020-10-24 01:26:33] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:33] local.INFO: Inserting Zam Wesell for later DB Insertion  
+[2020-10-24 01:26:35] local.INFO: Caching http://swapi.dev/api/planets/55/ with value Ojom  
+[2020-10-24 01:26:37] local.INFO: Caching http://swapi.dev/api/species/31/ with value Besalisk  
+[2020-10-24 01:26:37] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:37] local.INFO: Inserting Dexter Jettster for later DB Insertion  
+[2020-10-24 01:26:39] local.INFO: Next is http://swapi.dev/api/people/?page=9  
+[2020-10-24 01:26:39] local.INFO: Found 10 new characters.  
+[2020-10-24 01:26:39] local.INFO: Homeworld Kamino exists in cache.  
+[2020-10-24 01:26:41] local.INFO: Caching http://swapi.dev/api/species/32/ with value Kaminoan  
+[2020-10-24 01:26:41] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:41] local.INFO: Inserting Lama Su for later DB Insertion  
+[2020-10-24 01:26:41] local.INFO: Homeworld Kamino exists in cache.  
+[2020-10-24 01:26:41] local.INFO: Species Kaminoan exists in cache.  
+[2020-10-24 01:26:41] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:26:41] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:41] local.INFO: Inserting Taun We for later DB Insertion  
+[2020-10-24 01:26:41] local.INFO: Homeworld Coruscant exists in cache.  
+[2020-10-24 01:26:41] local.INFO: Species Human exists in cache.  
+[2020-10-24 01:26:41] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:26:41] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:41] local.INFO: Inserting Jocasta Nu for later DB Insertion  
+[2020-10-24 01:26:41] local.INFO: Homeworld unknown exists in cache.  
+[2020-10-24 01:26:41] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:26:41] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:41] local.INFO: Inserting R4-P17 for later DB Insertion  
+[2020-10-24 01:26:43] local.INFO: Caching http://swapi.dev/api/planets/56/ with value Skako  
+[2020-10-24 01:26:45] local.INFO: Caching http://swapi.dev/api/species/33/ with value Skakoan  
+[2020-10-24 01:26:45] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:45] local.INFO: Inserting Wat Tambor for later DB Insertion  
+[2020-10-24 01:26:47] local.INFO: Caching http://swapi.dev/api/planets/57/ with value Muunilinst  
+[2020-10-24 01:26:49] local.INFO: Caching http://swapi.dev/api/species/34/ with value Muun  
+[2020-10-24 01:26:49] local.INFO: Invalid value detected for mass with value of unknown  
+[2020-10-24 01:26:49] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:49] local.INFO: Inserting San Hill for later DB Insertion  
+[2020-10-24 01:26:51] local.INFO: Caching http://swapi.dev/api/planets/58/ with value Shili  
+[2020-10-24 01:26:53] local.INFO: Caching http://swapi.dev/api/species/35/ with value Togruta  
+[2020-10-24 01:26:53] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:53] local.INFO: Inserting Shaak Ti for later DB Insertion  
+[2020-10-24 01:26:55] local.INFO: Caching http://swapi.dev/api/planets/59/ with value Kalee  
+[2020-10-24 01:26:57] local.INFO: Caching http://swapi.dev/api/species/36/ with value Kaleesh  
+[2020-10-24 01:26:57] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:57] local.INFO: Inserting Grievous for later DB Insertion  
+[2020-10-24 01:26:57] local.INFO: Homeworld Kashyyyk exists in cache.  
+[2020-10-24 01:26:57] local.INFO: Species Wookie exists in cache.  
+[2020-10-24 01:26:57] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:57] local.INFO: Inserting Tarfful for later DB Insertion  
+[2020-10-24 01:26:57] local.INFO: Homeworld Alderaan exists in cache.  
+[2020-10-24 01:26:57] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:26:57] local.INFO: Inserting Raymus Antilles for later DB Insertion  
+[2020-10-24 01:26:59] local.INFO: Next is NULL  
+[2020-10-24 01:26:59] local.INFO: Found 2 new characters.  
+[2020-10-24 01:27:00] local.INFO: Caching http://swapi.dev/api/planets/60/ with value Umbara  
+[2020-10-24 01:27:00] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:27:00] local.INFO: Inserting Sly Moore for later DB Insertion  
+[2020-10-24 01:27:02] local.INFO: Caching http://swapi.dev/api/planets/12/ with value Utapau  
+[2020-10-24 01:27:04] local.INFO: Caching http://swapi.dev/api/species/37/ with value Pau'an  
+[2020-10-24 01:27:04] local.INFO: Invalid value detected for birth_year with value of unknown  
+[2020-10-24 01:27:04] local.INFO: Inserting Tion Medon for later DB Insertion  
+[2020-10-24 01:27:04] local.INFO: No more characters to retrieve, breaking off main loop.  
+[2020-10-24 01:27:04] local.INFO: Total characters to be inserted into Database: 82  
+[2020-10-24 01:27:04] local.INFO: Breaking characters into batches of 5  
+[2020-10-24 01:27:04] local.ALERT: Attempt to insert batch #0 into DB  
+[2020-10-24 01:27:04] local.ALERT: Attempt to insert batch #1 into DB  
+[2020-10-24 01:27:04] local.ALERT: Attempt to insert batch #2 into DB  
+[2020-10-24 01:27:04] local.ALERT: Attempt to insert batch #3 into DB  
+[2020-10-24 01:27:04] local.ALERT: Attempt to insert batch #4 into DB  
+[2020-10-24 01:29:07] local.INFO: Valid homeworld Geonosis  
+[2020-10-24 01:29:08] local.INFO: Invalid species Kangaroo  
+[2020-10-24 01:29:08] local.INFO: Updating character name C-3PO  
+[2020-10-24 01:29:09] local.INFO: Valid homeworld Naboo  
+[2020-10-24 01:29:11] local.INFO: Valid species Gungan  
+[2020-10-24 01:29:11] local.INFO: Updating character name R2-D2  
+[2020-10-24 01:29:12] local.INFO: Invalid homeworld Mars  
+[2020-10-24 01:29:13] local.INFO: Invalid species Wookiee  
+[2020-10-24 01:29:13] local.INFO: Updating character name Chewbacca  
+[2020-10-24 01:29:14] local.INFO: Valid homeworld Malastare  
+[2020-10-24 01:29:16] local.INFO: Valid species Dug  
+[2020-10-24 01:29:16] local.INFO: Updating character name Yoda  

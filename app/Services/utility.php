@@ -27,22 +27,17 @@ function getNextUrlPagination($responseData)
 
 /**
  * Function to check birth_year
- * Acceptable values include: unknown, 13BBY, 13 ABY
+ * Acceptable values examples: 13BBY, 13 ABY
  * @param string $year
  * @return bool
  */
 function check_birth_year(string $year)
 {
-    if (strtolower($year) === 'unknown') {
-        return true;
-    }
     $temp = strtoupper($year);
-    //Remove BBY and ABY
-    $justNumericValue = str_replace('BBY', '', $temp);
-    $justNumericValue = str_replace('ABY', '', $justNumericValue);
-
+    //Remove BBY or ABY and any trailing spaces via trim
     //So should only contain numeric value
-    return is_numeric($justNumericValue);
+    return is_numeric(trim(str_replace('BBY', '', $temp))) ||
+        is_numeric(trim(str_replace('ABY', '', $temp)));
 }
 
 /**
