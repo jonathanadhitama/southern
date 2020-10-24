@@ -1,61 +1,60 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Installed PHP Packages
+- doctrine/dbal: Passport for OAUTH authentication
+- laravel/ui: Scaffolding to generate front-end
+- rap2hpoutre/fast-excel: Fast excel for importing CSV Data
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+# Installed JS Packages:
+- axios: HTTP Client for calling REST API
+- formik: Form validation library for React
+- lodash: Library for utility functions
+- react: Main library for rendering front-end
+- yup: Validation Schema for Formik
 
-## About Laravel
+# Initial Setup
+- Navigate to project directory via Terminal
+- Install composer packages: $ `composer install`
+- Install JS packages: $ `npm i`
+- Generate environment file via copying the example: $ `cp .env.example .env`
+- Modify environment values for:
+    - DB_HOST= Database Host
+    - DB_DATABASE= Database name to use
+    - DB_USERNAME= Username to access Database
+    - DB_PASSWORD= Password to access Database
+- Generate Laravel Application Key: $ `php artisan key:generate`
+- Migrate DB: $ `php artisan migrate`
+- Run Seeder: $ `php artisan db:seed`
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Assumptions
+- Developed with PHP 7.4.11
+- Developed with MaridDB 10.5.6
+- Used Laravel version 7 to satisfy with requirements that application is executable with PHP 7.2
+- Using blade template with the exact script name to display HTML page as it is the recommended way of utilising Laravel's powerful MVC. 
+- Created a main service class (`App\Services\MainService`) which has public methods based on the individual scripts. This is so it easier to import and tested more easily.
+    - `public function getAllCharacters` --> `characters_jedi.php`
+    - `public function getAllMammals` --> `mammal_homeworlds.php`
+    - `public function importCharactersToDB` --> `import_characters.php`
+    - `public function updateCharactersToDB` --> `update_characters.php`
+    - `public function insertCharacterToDB` --> `create_character.php`
+- For create character page, added client and server side validation
+    - Client side validation is handled via Formik and Yup
+    - Server side validation is handled with Laravel Form Request and calling SWAPI for checking homeworld and species name before DB insertion
+    - Added CSRF handling in create character page to prevent XSS attack
+- Using Laravel query builder for any interactions with Database to prevent SQL injection attack 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Running the application
+- Navigate to project directory via Terminal
+- Run Laravel Mix: $ `npm run dev`
+- Run Laravel Server: $ `php artisan serve`
+- Open web browser
+- To view all character names in the movie Return of the Jedi navigate to: `http://localhost:8000/characters_jedi` 
+- To view all species and their homeworld name in Star Wars film navigate to: `http://localhost:8000/mammal_homeworlds`
+- To import all people from SWAPI into table `swapi_characters` navigate to: `http://localhost:8000/import_characters`
+- To update all characters inside table `swapi_characters` from table `updated_character_data` navigate to: `http://localhost:8000/update_characters`
+    - Make sure seeder has been ran first before navigating here, otherwise no character will be updated: $ `php artisan db:seed`
+- To insert a new character into table `swapi_characters` navigate to: `http://localhost:8000/create_character`
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Testing
+- Server unit and feature testing with in-built PHPUnit from Laravel via $ `php artisan test`
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Possible Improvements 
+- Import Characters script could be improved to use Laravel Job & Queue. This will import all characters in the background, which could improve performance. 
