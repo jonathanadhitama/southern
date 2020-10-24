@@ -212,5 +212,6 @@ class ImportCharactersTest extends TestCase
     {
         //Run seeder to populate updated_characters_data table
         (new UpdatedCharactersSeeder())->run();
+        parent::tearDown();
     }
 }

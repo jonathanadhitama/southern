@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from "react-dom";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
@@ -47,9 +47,55 @@ const VALIDATION_SCHEMA = Yup.object().shape({
 
 
 function CreateCharacter() {
-    const onSubmitFunction = (values) => {
-        console.log(values);
+    //Set states using hooks
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessages, setErrorMessages] = useState([]);
+    const [showAlert, setShowAlert] = useState(false);
+    const [showWhich, setShowWhich] = useState('');
+
+    const onSubmitFunction = (values, { setSubmitting, resetForm }) => {
+        // console.log(values);
+
+        //Get CSRF TOKEN
+        let csrfToken = '';
+        const metas = document.getElementsByTagName('meta');
+        for (let i = 0; i < metas.length; i++) {
+            if (metas[i].getAttribute('name') === "csrf-token") {
+                csrfToken = metas[i].getAttribute('content');
+                break;
+            }
+        }
+        // console.log(csrfToken);
+
+        window.axios
+            .post('/create_character_submit', values, { headers: { 'X-CSRF-TOKEN': csrfToken } })
+            .then(response => {
+                // console.log(response);
+                if (response.data.success) {
+                    setShowAlert(true);
+                    setShowWhich('alert-success');
+                    setSuccessMessage(response.data.messages[0]);
+                    resetForm();
+                } else {
+                    setShowAlert(true);
+                    setShowWhich('alert-danger')
+                    setErrorMessages(response.data.messages);
+                }
+                setSubmitting(false);
+            })
+            .catch(error => {
+                console.log("error ", error);
+                setShowAlert(true);
+                setShowWhich('alert-danger')
+                setErrorMessages(error.data.message);
+            })
     }
+
+    const alertClassName = `alert ${showWhich} alert-dismissible fade show`;
+    const alertMessages = showWhich === 'alert-success'
+        ? [successMessage]
+        : errorMessages;
+
     return (
         <div className="container-fluid">
             <Formik initialValues={FORMIK_INITIAL_VALUES} onSubmit={onSubmitFunction} validationSchema={VALIDATION_SCHEMA}>
@@ -86,6 +132,18 @@ function CreateCharacter() {
                     </Form>
                 )}
             </Formik>
+            {showAlert && (
+                <div className={alertClassName} role="alert">
+                    {Array.isArray(alertMessages) && alertMessages.map((alertMessage, alertIndex) => (
+                        <React.Fragment key={`ALERT-${alertIndex}`}>
+                            {alertMessage}<br />
+                        </React.Fragment>
+                    ))}
+                    <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() => setShowAlert(false)}>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            )}
         </div>
     );
 }

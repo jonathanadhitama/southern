@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\CreateCharacterRequest;
 use App\Services\MainService;
 
 
@@ -34,5 +34,10 @@ class MainController extends Controller
 
     public function createCharacter() {
         return view('create_character');
+    }
+
+    public function createCharacterSubmit(CreateCharacterRequest $request) {
+        $output = (new MainService())->insertCharacterToDB($request->all());
+        return response()->json($output);
     }
 }

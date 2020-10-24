@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" >
+        <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <title>Create Character</title>
     <body>

@@ -26,3 +26,4 @@ Route::get('/mammal_homeworlds', 'MainController@handleMammalHomeworlds');
 Route::get('/import_characters', 'MainController@importCharacterIntoDB');
 Route::get('/update_characters', 'MainController@updateCharacterIntoDB');
 Route::get('/create_character', 'MainController@createCharacter');
+Route::post('/create_character_submit', 'MainController@createCharacterSubmit');

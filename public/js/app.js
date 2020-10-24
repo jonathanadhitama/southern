@@ -80967,6 +80967,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! formik */ "./node_modules/formik/dist/formik.esm.js");
 /* harmony import */ var yup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! yup */ "./node_modules/yup/es/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -81053,26 +81065,87 @@ var VALIDATION_SCHEMA = yup__WEBPACK_IMPORTED_MODULE_3__["object"]().shape({
 });
 
 function CreateCharacter() {
-  var onSubmitFunction = function onSubmitFunction(values) {
-    console.log(values);
+  //Set states using hooks
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      successMessage = _useState2[0],
+      setSuccessMessage = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      errorMessages = _useState4[0],
+      setErrorMessages = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      showAlert = _useState6[0],
+      setShowAlert = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      showWhich = _useState8[0],
+      setShowWhich = _useState8[1];
+
+  var onSubmitFunction = function onSubmitFunction(values, _ref) {
+    var setSubmitting = _ref.setSubmitting,
+        resetForm = _ref.resetForm;
+    // console.log(values);
+    //Get CSRF TOKEN
+    var csrfToken = '';
+    var metas = document.getElementsByTagName('meta');
+
+    for (var i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === "csrf-token") {
+        csrfToken = metas[i].getAttribute('content');
+        break;
+      }
+    } // console.log(csrfToken);
+
+
+    window.axios.post('/create_character_submit', values, {
+      headers: {
+        'X-CSRF-TOKEN': csrfToken
+      }
+    }).then(function (response) {
+      // console.log(response);
+      if (response.data.success) {
+        setShowAlert(true);
+        setShowWhich('alert-success');
+        setSuccessMessage(response.data.messages[0]);
+        resetForm();
+      } else {
+        setShowAlert(true);
+        setShowWhich('alert-danger');
+        setErrorMessages(response.data.messages);
+      }
+
+      setSubmitting(false);
+    })["catch"](function (error) {
+      console.log("error ", error);
+      setShowAlert(true);
+      setShowWhich('alert-danger');
+      setErrorMessages(error.data.message);
+    });
   };
 
+  var alertClassName = "alert ".concat(showWhich, " alert-dismissible fade show");
+  var alertMessages = showWhich === 'alert-success' ? [successMessage] : errorMessages;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container-fluid"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_2__["Formik"], {
     initialValues: FORMIK_INITIAL_VALUES,
     onSubmit: onSubmitFunction,
     validationSchema: VALIDATION_SCHEMA
-  }, function (_ref) {
-    var isSubmitting = _ref.isSubmitting,
-        errors = _ref.errors,
-        touched = _ref.touched;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_2__["Form"], null, FIELDS.map(function (_ref2, index) {
-      var name = _ref2.name,
-          required = _ref2.required,
-          type = _ref2.type,
-          label = _ref2.label,
-          placeholder = _ref2.placeholder;
+  }, function (_ref2) {
+    var isSubmitting = _ref2.isSubmitting,
+        errors = _ref2.errors,
+        touched = _ref2.touched;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_2__["Form"], null, FIELDS.map(function (_ref3, index) {
+      var name = _ref3.name,
+          required = _ref3.required,
+          type = _ref3.type,
+          label = _ref3.label,
+          placeholder = _ref3.placeholder;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input-group pt-3 pl-2",
         key: index
@@ -81099,7 +81172,24 @@ function CreateCharacter() {
       disabled: isSubmitting,
       className: "btn btn-primary"
     }, "Submit")));
-  }));
+  }), showAlert && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: alertClassName,
+    role: "alert"
+  }, Array.isArray(alertMessages) && alertMessages.map(function (alertMessage, alertIndex) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+      key: "ALERT-".concat(alertIndex)
+    }, alertMessage, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "close",
+    "data-dismiss": "alert",
+    "aria-label": "Close",
+    onClick: function onClick() {
+      return setShowAlert(false);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    "aria-hidden": "true"
+  }, "\xD7"))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (CreateCharacter);

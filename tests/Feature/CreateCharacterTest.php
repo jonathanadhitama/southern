@@ -4,24 +4,15 @@ namespace Tests\Feature;
 
 use App\Character;
 use App\Services\MainService;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
-use UpdatedCharactersSeeder;
 
-class UpdateCharactersTest extends TestCase
+class CreateCharacterTest extends TestCase
 {
-    use RefreshDatabase;
 
     private const NAME = 'Lorem Ipsum';
-    private const ORIGINAL_HEIGHT = '150';
-    private const ORIGINAL_MASS = '70';
-    private const ORIGINAL_HAIR_COLOUR = 'n/a';
-    private const ORIGINAL_BIRTH_YEAR = '12ABY';
-    private const ORIGINAL_GENDER = 'male';
-    private const ORIGINAL_HOMEWORLD = 'Naboo';
-    private const ORIGINAL_SPECIES = 'Human';
+    private const HAIR_COLOUR = 'n/a';
+    private const GENDER = 'male';
 
     private const VALID_SPECIES = 'Wookie';
     private const VALID_BIRTH_YEAR = '13BBY';
@@ -35,26 +26,26 @@ class UpdateCharactersTest extends TestCase
     private const INVALID_HEIGHT = 'TEST';
     private const INVALID_MASS = 'MASS';
 
-    private const INVALID_UPDATE_DATA = [
+    private const INVALID_INSERT_DATA = [
         'name' => self::NAME,
         'height' => self::INVALID_HEIGHT,
         'mass' => self::INVALID_MASS,
-        'hair_color' => self::ORIGINAL_HAIR_COLOUR,
+        'hair_colour' => self::HAIR_COLOUR,
         'birth_year' => self::INVALID_BIRTH_YEAR,
-        'gender' => self::ORIGINAL_GENDER,
-        'homeworld_name' => self::INVALID_HOMEWORLD,
-        'species_name' => self::INVALID_SPECIES
+        'gender' => self::GENDER,
+        'homeworld' => self::INVALID_HOMEWORLD,
+        'species' => self::INVALID_SPECIES
     ];
 
-    private const VALID_UPDATE_DATA = [
+    private const VALID_INSERT_DATA = [
         'name' => self::NAME,
         'height' => self::VALID_HEIGHT,
         'mass' => self::VALID_MASS,
-        'hair_color' => self::ORIGINAL_HAIR_COLOUR,
+        'hair_colour' => self::HAIR_COLOUR,
         'birth_year' => self::VALID_BIRTH_YEAR,
-        'gender' => self::ORIGINAL_GENDER,
-        'homeworld_name' => self::VALID_HOMEWORLD,
-        'species_name' => self::VALID_SPECIES
+        'gender' => self::GENDER,
+        'homeworld' => self::VALID_HOMEWORLD,
+        'species' => self::VALID_SPECIES
     ];
 
     private const INVALID_SEARCH_RESULT = [
@@ -95,20 +86,6 @@ class UpdateCharactersTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        DB::table('swapi_characters')->insert(
-            [
-                'name' => self::NAME,
-                'height' => self::ORIGINAL_HEIGHT,
-                'mass' => self::ORIGINAL_MASS,
-                'hair_colour' => self::ORIGINAL_HAIR_COLOUR,
-                'birth_year' => self::ORIGINAL_BIRTH_YEAR,
-                'gender' => self::ORIGINAL_GENDER,
-                'homeworld' => self::ORIGINAL_HOMEWORLD,
-                'species' => self::ORIGINAL_SPECIES
-            ]
-        );
-        DB::table('updated_character_data')->truncate();
-
         Http::fake([
             config('swapi.search_homeworld_api') . self::VALID_HOMEWORLD => Http::response(self::VALID_SEARCH_HOMEWORLD_RESULT, 200),
             config('swapi.search_homeworld_api') . self::INVALID_HOMEWORLD => Http::response(self::INVALID_SEARCH_RESULT, 200),
@@ -118,54 +95,34 @@ class UpdateCharactersTest extends TestCase
     }
 
     /**
-     * Attempt to update an entry with invalid data
+     * Test to attempt to insert invalid data
      *
      * @return void
      */
-    public function testInvalidUpdateData()
+    public function testInsertInvalidData()
     {
-        DB::table('updated_character_data')->insert(self::INVALID_UPDATE_DATA);
-        $output = (new MainService())->updateCharactersToDB();
-        $this->assertTrue($output['success']);
+        $output = (new MainService())->insertCharacterToDB(self::INVALID_INSERT_DATA);
+        $this->assertFalse($output['success']);
+        $this->assertCount(5, $output['messages']);
 
         $character = Character::where('name', self::NAME)->first();
-        $this->assertNotNull($character);
-        $this->assertEquals(floatval(self::ORIGINAL_HEIGHT), $character->height);
-        $this->assertEquals(floatval(self::ORIGINAL_MASS), $character->mass);
-        $this->assertEquals(self::ORIGINAL_HAIR_COLOUR, $character->hair_colour);
-        $this->assertEquals(self::ORIGINAL_BIRTH_YEAR, $character->birth_year);
-        $this->assertEquals(self::ORIGINAL_GENDER, $character->gender);
-        $this->assertEquals(self::ORIGINAL_HOMEWORLD, $character->homeworld);
-        $this->assertEquals(self::ORIGINAL_SPECIES, $character->species);
+        $this->assertNull($character);
     }
 
-    /**
-     * Attempt to update an entry with valid data
-     *
-     * @return void
-     */
-    public function testValidUpdateData()
-    {
-        DB::table('updated_character_data')->insert(self::VALID_UPDATE_DATA);
-        $output = (new MainService())->updateCharactersToDB();
+    public function testInsertValidData() {
+        $output = (new MainService())->insertCharacterToDB(self::VALID_INSERT_DATA);
         $this->assertTrue($output['success']);
+        $this->assertCount(1, $output['messages']);
 
         $character = Character::where('name', self::NAME)->first();
         $this->assertNotNull($character);
         $this->assertEquals(floatval(self::VALID_HEIGHT), $character->height);
         $this->assertEquals(floatval(self::VALID_MASS), $character->mass);
-        $this->assertEquals(self::ORIGINAL_HAIR_COLOUR, $character->hair_colour);
+        $this->assertEquals(self::HAIR_COLOUR, $character->hair_colour);
         $this->assertEquals(self::VALID_BIRTH_YEAR, $character->birth_year);
-        $this->assertEquals(self::ORIGINAL_GENDER, $character->gender);
+        $this->assertEquals(self::GENDER, $character->gender);
         $this->assertEquals(self::VALID_HOMEWORLD, $character->homeworld);
         $this->assertEquals(self::VALID_SPECIES, $character->species);
-    }
-
-    protected function tearDown(): void
-    {
-        DB::table('swapi_characters')->where('name',  '=',self::NAME)->delete();
-        //Run seeder to populate updated_characters_data table
-        (new UpdatedCharactersSeeder())->run();
-        parent::tearDown();
+        $character->delete();
     }
 }

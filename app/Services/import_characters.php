@@ -99,13 +99,15 @@ function insertCharacterIntoDB() {
         Log::info('Breaking characters into batches of ' . count($characterChunks));
         $errorMessages = [];
         for ($i = 0; $i < count($characterChunks); $i++) {
-            try {
-                Log::alert('Attempt to insert batch #' . strval($i) . ' into DB');
-                DB::table('swapi_characters')->insert($characterChunks[$i]);
-            } catch (\Exception $e) {
-                $message = 'Error when attempting to insert character batch #' . strval($i) . ' into DB: ' . $e->getMessage();
+            Log::alert('Attempt to insert batch #' . strval($i) . ' into DB');
+            $result = DB::table('swapi_characters')->insert($characterChunks[$i]);
+            if (!$result) {
+                $message = 'Error when attempting to insert character batch #' . strval($i) . ' into DB';
                 Log::error($message);
                 $errorMessages[] = $message;
+            } else {
+                $message = 'Successfully inserted character batch #' . strval($i) . ' into DB';
+                Log::info($message);
             }
         }
         $success = count($errorMessages) === 0;
