@@ -1,6 +1,6 @@
 # Installed PHP Packages
 - doctrine/dbal: Passport for OAUTH authentication
-- laravel/ui: Scaffolding to generate front-end
+- laravel/ui: Scaffolding to generate front-end and Bootstrap CSS
 - rap2hpoutre/fast-excel: Fast excel for importing CSV Data
 
 # Installed JS Packages:
