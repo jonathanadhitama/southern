@@ -4,8 +4,9 @@ namespace Tests\Unit;
 
 use App\Services\MainService;
 use Illuminate\Support\Facades\Http;
+use Tests\TestCase;
 
-class CharactersJediTest extends \Tests\TestCase
+class CharactersJediTest extends TestCase
 {
     private const A_NEW_HOPE_DATA = [
         "title" => "A New Hope",

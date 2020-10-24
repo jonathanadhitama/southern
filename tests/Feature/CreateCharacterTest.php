@@ -109,6 +109,11 @@ class CreateCharacterTest extends TestCase
         $this->assertNull($character);
     }
 
+    /**
+     * Test to attempt to insert valid data
+     *
+     * @return void
+     */
     public function testInsertValidData() {
         $output = (new MainService())->insertCharacterToDB(self::VALID_INSERT_DATA);
         $this->assertTrue($output['success']);

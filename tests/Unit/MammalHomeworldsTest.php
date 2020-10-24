@@ -4,8 +4,9 @@ namespace Tests\Unit;
 
 use App\Services\MainService;
 use Illuminate\Support\Facades\Http;
+use Tests\TestCase;
 
-class MammalHomeworldsTest extends \Tests\TestCase
+class MammalHomeworldsTest extends TestCase
 {
     private const DROID_DATA = [
         "name" => "Droid",
@@ -143,14 +144,14 @@ class MammalHomeworldsTest extends \Tests\TestCase
     }
 
     /**
-     * Test Mammal Species Available With Next
+     * Test Mammal Species Available With Next Pagination
      *
      * @return void
      */
     public function testWithValidMammalAndNext()
     {
         Http::fake([
-            config('swapi.all_species_api') => Http::response($this->resultWithMammal, 200),
+            config('swapi.all_species_api') => Http::response($this->resultWithMammalAndNext, 200),
             'http://swapi.dev/api/species/?page=2' => Http::response($this->resultMammalNext, 200),
             'http://swapi.dev/api/planets/9/' => Http::response($this->coruscantData, 200),
             'http://swapi.dev/api/planets/31/' => Http::response($this->monCalaData, 200)

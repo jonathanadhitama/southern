@@ -123,7 +123,7 @@ class ImportCharactersTest extends TestCase
     ];
 
     /**
-     * A basic insert character test with empty results
+     * A basic import character test with empty results
      *
      * @return void
      */
@@ -141,7 +141,7 @@ class ImportCharactersTest extends TestCase
     }
 
     /**
-     * A basic insert character test with single result
+     * A basic import character test with single result
      *
      * @return void
      */
@@ -161,7 +161,7 @@ class ImportCharactersTest extends TestCase
     }
 
     /**
-     * A basic insert character test with next pagination
+     * A basic import character test with next pagination
      *
      * @return void
      */
@@ -182,7 +182,7 @@ class ImportCharactersTest extends TestCase
     }
 
     /**
-     * A basic insert character test with next pagination
+     * A basic import character test with single record that has an invalid height and mass
      *
      * @return void
      */
