@@ -17,21 +17,21 @@ function create_character(array $data)
     //Ensure height value is numeric
     if (array_key_exists('height', $data) && !is_numeric($data['height'])) {
         $message = 'Invalid height attribute ' . $data['height'];
-//        Log::info($message);
+        Log::info($message);
         $success = false;
         $messages[] = $message;
     }
     //Ensure mass value is numeric
     if (array_key_exists('mass', $data) && !is_numeric($data['mass'])) {
         $message = 'Invalid mass attribute ' . $data['mass'];
-//        Log::info($message);
+        Log::info($message);
         $success = false;
         $messages[] = $message;
     }
     //Ensure birth_year is correct
     if (array_key_exists('birth_year', $data) && !check_birth_year($data['birth_year'])) {
         $message = 'Invalid birth_year attribute ' . $data['birth_year'];
-//        Log::info($message);
+        Log::info($message);
         $success = false;
         $messages[] = $message;
     }
@@ -40,7 +40,7 @@ function create_character(array $data)
         $homeworld = validateHomeworldOrSpecies(config('swapi.search_homeworld_api'), $data['homeworld']);
         if (is_null($homeworld)) {
             $message = 'Invalid homeworld name ' . $data['homeworld'];
-//            Log::info($message);
+            Log::info($message);
             $success = false;
             $messages[] = $message;
         } else {
@@ -52,7 +52,7 @@ function create_character(array $data)
         $species = validateHomeworldOrSpecies(config('swapi.search_species_api'), $data['species']);
         if (is_null($species)) {
             $message = 'Invalid value species name ' . $data['species'];
-//            Log::info($message);
+            Log::info($message);
             $success = false;
             $messages[] = $message;
         } else {

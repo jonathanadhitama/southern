@@ -3612,3 +3612,101 @@
 [2020-10-24 07:19:42] local.INFO: Updating character name Yoda  
 [2020-10-24 07:27:47] local.INFO: Valid homeworld Naboo  
 [2020-10-24 07:27:48] local.INFO: Valid species Gungan  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of SWAPI all films API  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of SWAPI all films API  
+[2020-10-24 09:05:04] testing.INFO: Successfully filtered Return of Jedi from all films  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of SWAPI all films API  
+[2020-10-24 09:05:04] testing.INFO: Successfully filtered Return of Jedi from all films  
+[2020-10-24 09:05:04] testing.INFO: Attempt to get character detail of http://swapi.dev/api/people/1/  
+[2020-10-24 09:05:04] testing.INFO: Successful in getting character detail of http://swapi.dev/api/people/1/  
+[2020-10-24 09:05:04] testing.INFO: Inserting into output array Luke Skywalker  
+[2020-10-24 09:05:04] testing.INFO: Attempt to get character detail of http://swapi.dev/api/people/2/  
+[2020-10-24 09:05:04] testing.INFO: Successful in getting character detail of http://swapi.dev/api/people/2/  
+[2020-10-24 09:05:04] testing.INFO: Inserting into output array C-3PO  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of https://swapi.dev/api/species/  
+[2020-10-24 09:05:04] testing.INFO: Next is NULL  
+[2020-10-24 09:05:04] testing.INFO: Added 0 species to main output array  
+[2020-10-24 09:05:04] testing.INFO: No more species to retrieve, breaking off main loop.  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of https://swapi.dev/api/species/  
+[2020-10-24 09:05:04] testing.INFO: Next is NULL  
+[2020-10-24 09:05:04] testing.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/9/  
+[2020-10-24 09:05:04] testing.INFO: Added 1 species to main output array  
+[2020-10-24 09:05:04] testing.INFO: No more species to retrieve, breaking off main loop.  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of https://swapi.dev/api/species/  
+[2020-10-24 09:05:04] testing.INFO: Next is NULL  
+[2020-10-24 09:05:04] testing.INFO: Successful attempt to get planet detail of http://swapi.dev/api/planets/9/  
+[2020-10-24 09:05:04] testing.INFO: Added 1 species to main output array  
+[2020-10-24 09:05:04] testing.INFO: No more species to retrieve, breaking off main loop.  
+[2020-10-24 09:05:04] testing.INFO: Invalid height attribute TEST  
+[2020-10-24 09:05:04] testing.INFO: Invalid mass attribute MASS  
+[2020-10-24 09:05:04] testing.INFO: Invalid birth_year attribute LOREM IPSUM  
+[2020-10-24 09:05:04] testing.INFO: Invalid homeworld IPSUM  
+[2020-10-24 09:05:04] testing.INFO: Invalid homeworld name IPSUM  
+[2020-10-24 09:05:04] testing.INFO: Invalid species IPSUM  
+[2020-10-24 09:05:04] testing.INFO: Invalid value species name IPSUM  
+[2020-10-24 09:05:04] testing.INFO: Valid homeworld Coruscant  
+[2020-10-24 09:05:04] testing.INFO: Valid species Wookie  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of https://swapi.dev/api/people/  
+[2020-10-24 09:05:04] testing.INFO: Next is NULL  
+[2020-10-24 09:05:04] testing.INFO: Found 0 new characters.  
+[2020-10-24 09:05:04] testing.INFO: No more characters to retrieve, breaking off main loop.  
+[2020-10-24 09:05:04] testing.INFO: Inserting 4 entries inside updated_character_data table  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of https://swapi.dev/api/people/  
+[2020-10-24 09:05:04] testing.INFO: Next is NULL  
+[2020-10-24 09:05:04] testing.INFO: Found 1 new characters.  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of http://swapi.dev/api/planets/1/  
+[2020-10-24 09:05:04] testing.INFO: Caching http://swapi.dev/api/planets/1/ with value Tatooine  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of http://swapi.dev/api/species/2/  
+[2020-10-24 09:05:04] testing.INFO: Caching http://swapi.dev/api/species/2/ with value Droid  
+[2020-10-24 09:05:04] testing.INFO: Inserting C-3PO for later DB Insertion  
+[2020-10-24 09:05:04] testing.INFO: No more characters to retrieve, breaking off main loop.  
+[2020-10-24 09:05:04] testing.INFO: Total characters to be inserted into Database: 1  
+[2020-10-24 09:05:04] testing.INFO: Breaking characters into batches of 1  
+[2020-10-24 09:05:04] testing.ALERT: Attempt to insert batch #0 into DB  
+[2020-10-24 09:05:04] testing.INFO: Successfully inserted character batch #0 into DB  
+[2020-10-24 09:05:04] testing.INFO: Inserting 4 entries inside updated_character_data table  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of https://swapi.dev/api/people/  
+[2020-10-24 09:05:04] testing.INFO: Next is http://swapi.dev/api/people/?page=2  
+[2020-10-24 09:05:04] testing.INFO: Found 1 new characters.  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of http://swapi.dev/api/planets/1/  
+[2020-10-24 09:05:04] testing.INFO: Caching http://swapi.dev/api/planets/1/ with value Tatooine  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of http://swapi.dev/api/species/2/  
+[2020-10-24 09:05:04] testing.INFO: Caching http://swapi.dev/api/species/2/ with value Droid  
+[2020-10-24 09:05:04] testing.INFO: Inserting C-3PO for later DB Insertion  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of http://swapi.dev/api/people/?page=2  
+[2020-10-24 09:05:04] testing.INFO: Next is NULL  
+[2020-10-24 09:05:04] testing.INFO: Found 1 new characters.  
+[2020-10-24 09:05:04] testing.INFO: Homeworld Tatooine exists in cache.  
+[2020-10-24 09:05:04] testing.INFO: Inserting Luke Skywalker for later DB Insertion  
+[2020-10-24 09:05:04] testing.INFO: No more characters to retrieve, breaking off main loop.  
+[2020-10-24 09:05:04] testing.INFO: Total characters to be inserted into Database: 2  
+[2020-10-24 09:05:04] testing.INFO: Breaking characters into batches of 1  
+[2020-10-24 09:05:04] testing.ALERT: Attempt to insert batch #0 into DB  
+[2020-10-24 09:05:04] testing.INFO: Successfully inserted character batch #0 into DB  
+[2020-10-24 09:05:04] testing.INFO: Inserting 4 entries inside updated_character_data table  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of https://swapi.dev/api/people/  
+[2020-10-24 09:05:04] testing.INFO: Next is NULL  
+[2020-10-24 09:05:04] testing.INFO: Found 1 new characters.  
+[2020-10-24 09:05:04] testing.INFO: Successful API Call of http://swapi.dev/api/planets/1/  
+[2020-10-24 09:05:04] testing.INFO: Caching http://swapi.dev/api/planets/1/ with value Tatooine  
+[2020-10-24 09:05:04] testing.INFO: Invalid value detected for height with value of unknown  
+[2020-10-24 09:05:04] testing.INFO: Invalid value detected for mass with value of n/a  
+[2020-10-24 09:05:04] testing.INFO: Inserting Luke Skywalker for later DB Insertion  
+[2020-10-24 09:05:04] testing.INFO: No more characters to retrieve, breaking off main loop.  
+[2020-10-24 09:05:04] testing.INFO: Total characters to be inserted into Database: 1  
+[2020-10-24 09:05:04] testing.INFO: Breaking characters into batches of 1  
+[2020-10-24 09:05:04] testing.ALERT: Attempt to insert batch #0 into DB  
+[2020-10-24 09:05:04] testing.INFO: Successfully inserted character batch #0 into DB  
+[2020-10-24 09:05:04] testing.INFO: Inserting 4 entries inside updated_character_data table  
+[2020-10-24 09:05:04] testing.INFO: Found 1 records of  Updated Characters Data  
+[2020-10-24 09:05:04] testing.INFO: Invalid homeworld IPSUM  
+[2020-10-24 09:05:04] testing.INFO: Invalid species IPSUM  
+[2020-10-24 09:05:04] testing.INFO: Updating character name Lorem Ipsum  
+[2020-10-24 09:05:04] testing.INFO: Update all characters data.  
+[2020-10-24 09:05:04] testing.INFO: Inserting 4 entries inside updated_character_data table  
+[2020-10-24 09:05:04] testing.INFO: Found 1 records of  Updated Characters Data  
+[2020-10-24 09:05:04] testing.INFO: Valid homeworld Coruscant  
+[2020-10-24 09:05:04] testing.INFO: Valid species Wookie  
+[2020-10-24 09:05:04] testing.INFO: Updating character name Lorem Ipsum  
+[2020-10-24 09:05:04] testing.INFO: Update all characters data.  
+[2020-10-24 09:05:04] testing.INFO: Inserting 4 entries inside updated_character_data table  

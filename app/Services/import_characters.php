@@ -21,6 +21,7 @@ function insertCharacterIntoDB() {
         }
         $response = Http::get($next);
         if ($response->successful()) {
+            Log::info('Successful API Call of ' . $next);
             $characters = $response->json();
             //Get next URL for pagination
             $next = getNextUrlPagination($characters);
@@ -131,6 +132,7 @@ function getHomeworldOrSpeciesData(string $url)
 {
     $response = Http::get($url);
     if ($response->successful()) {
+        Log::info('Successful API Call of ' . $url);
         $data = $response->json();
         if (is_array($data) && array_key_exists('name', $data)) {
             return $data['name'];

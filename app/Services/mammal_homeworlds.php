@@ -19,6 +19,7 @@ function getAllMammalHomeworlds()
         }
         $response = Http::get($next);
         if ($response->successful()) {
+            Log::info('Successful API Call of ' . $next);
             $species = $response->json();
             //Get next URL for pagination
             $next = getNextUrlPagination($species);

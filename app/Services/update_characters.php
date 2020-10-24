@@ -15,6 +15,7 @@ function updateCharacters()
     }
     $updateCount = 0;
     $notUpdated = [];
+    Log::info('Found ' . count($updatedData) . ' records of  Updated Characters Data');
     foreach ($updatedData as $entry) {
         $output = sanitiseAndValidateData($entry);
         //First check whether character exists
@@ -32,12 +33,15 @@ function updateCharacters()
         }
     }
     if ($updateCount === 0) {
+        Log::info('Unable to update any character data.');
         return ['success' => false, 'messages' => ['No Character Data updated.']];
     } else if ($updateCount < count($updatedData)) {
+        Log::info('Unable to update a few characters data.');
         return ['success' => false, 'messages' => array_map(function ($name) {
             return 'Unable to update character name ' . $name . ' since record does not exist.';
         }, $notUpdated)];
     } else {
+        Log::info('Update all characters data.');
         return ['success' => true, 'messages' => ['All Character data updated.']];
     }
 
