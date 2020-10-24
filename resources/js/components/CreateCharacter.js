@@ -106,12 +106,10 @@ function CreateCharacter() {
                                 { name, required, type, label, placeholder },
                                 index
                             ) => (
-                                <div className="input-group pt-3 pl-2" key={index}>
-                                    {/*<label htmlFor={name}>{label}</label>*/}
-                                    <div className="input-group-prepend">
-                                        <span className="input-group-text" id={`LABEL-${name}`}>{label}</span>
-                                    </div>
+                                <div className="form-group pt-3 pl-2" key={index}>
+                                    <label htmlFor={name}>{label}</label>
                                     <Field
+                                        id={name}
                                         name={name}
                                         required={required}
                                         type={type}
@@ -126,24 +124,24 @@ function CreateCharacter() {
                                 </div>
                             )
                         )}
+                        {showAlert && (
+                            <div className={alertClassName} role="alert">
+                                {Array.isArray(alertMessages) && alertMessages.map((alertMessage, alertIndex) => (
+                                    <React.Fragment key={`ALERT-${alertIndex}`}>
+                                        {alertMessage}<br />
+                                    </React.Fragment>
+                                ))}
+                                <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() => setShowAlert(false)}>
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        )}
                         <div className="pt-3 pl-2">
                             <button type="submit" disabled={isSubmitting} className="btn btn-primary">Submit</button>
                         </div>
                     </Form>
                 )}
             </Formik>
-            {showAlert && (
-                <div className={alertClassName} role="alert">
-                    {Array.isArray(alertMessages) && alertMessages.map((alertMessage, alertIndex) => (
-                        <React.Fragment key={`ALERT-${alertIndex}`}>
-                            {alertMessage}<br />
-                        </React.Fragment>
-                    ))}
-                    <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() => setShowAlert(false)}>
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            )}
         </div>
     );
 }

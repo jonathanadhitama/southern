@@ -81147,14 +81147,12 @@ function CreateCharacter() {
           label = _ref3.label,
           placeholder = _ref3.placeholder;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "input-group pt-3 pl-2",
+        className: "form-group pt-3 pl-2",
         key: index
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "input-group-prepend"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "input-group-text",
-        id: "LABEL-".concat(name)
-      }, label)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_2__["Field"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: name
+      }, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_2__["Field"], {
+        id: name,
         name: name,
         required: required,
         type: type,
@@ -81165,31 +81163,31 @@ function CreateCharacter() {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "invalid-field-southern"
       }, errors[name] && touched[name] && errors[name]));
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }), showAlert && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: alertClassName,
+      role: "alert"
+    }, Array.isArray(alertMessages) && alertMessages.map(function (alertMessage, alertIndex) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+        key: "ALERT-".concat(alertIndex)
+      }, alertMessage, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      className: "close",
+      "data-dismiss": "alert",
+      "aria-label": "Close",
+      onClick: function onClick() {
+        return setShowAlert(false);
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      "aria-hidden": "true"
+    }, "\xD7"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "pt-3 pl-2"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       type: "submit",
       disabled: isSubmitting,
       className: "btn btn-primary"
     }, "Submit")));
-  }), showAlert && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: alertClassName,
-    role: "alert"
-  }, Array.isArray(alertMessages) && alertMessages.map(function (alertMessage, alertIndex) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
-      key: "ALERT-".concat(alertIndex)
-    }, alertMessage, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "button",
-    className: "close",
-    "data-dismiss": "alert",
-    "aria-label": "Close",
-    onClick: function onClick() {
-      return setShowAlert(false);
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    "aria-hidden": "true"
-  }, "\xD7"))));
+  }));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (CreateCharacter);

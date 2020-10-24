@@ -3811,3 +3811,17 @@
 [2020-10-24 09:26:54] testing.INFO: Updating character name Lorem Ipsum  
 [2020-10-24 09:26:54] testing.INFO: Update all characters data.  
 [2020-10-24 09:26:54] testing.INFO: Inserting 4 entries inside updated_character_data table  
+[2020-10-24 22:54:58] local.INFO: Valid homeworld Naboo  
+[2020-10-24 22:54:59] local.INFO: Invalid species Remnant  
+[2020-10-24 22:54:59] local.INFO: Invalid value species name Remnant  
+[2020-10-24 22:55:46] local.INFO: Valid homeworld Naboo  
+[2020-10-24 22:55:48] local.INFO: Invalid species Mars  
+[2020-10-24 22:55:48] local.INFO: Invalid value species name Mars  
+[2020-10-24 22:57:44] local.INFO: Valid homeworld Naboo  
+[2020-10-24 22:57:46] local.INFO: Invalid species Remnant  
+[2020-10-24 22:57:46] local.INFO: Invalid value species name Remnant  
+[2020-10-24 22:58:26] local.INFO: Valid homeworld Naboo  
+[2020-10-24 22:58:27] local.INFO: Invalid species Mars  
+[2020-10-24 22:58:27] local.INFO: Invalid value species name Mars  
+[2020-10-24 22:58:39] local.INFO: Valid homeworld Naboo  
+[2020-10-24 22:58:41] local.INFO: Valid species Gungan  

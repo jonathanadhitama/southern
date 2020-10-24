@@ -19,3 +19,7 @@
     margin-top: 0.25rem;
     color: #e3342f;
 }
+
+input.form-control::placeholder {
+    color: #dddddd;
+}

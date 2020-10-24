@@ -19,6 +19,18 @@
     margin-top: 0.25rem;
     color: #e3342f;
 }
+
+input.form-control::-moz-placeholder {
+    color: #dddddd;
+}
+
+input.form-control:-ms-input-placeholder {
+    color: #dddddd;
+}
+
+input.form-control::placeholder {
+    color: #dddddd;
+}
 @charset "UTF-8";
 
 /*!
