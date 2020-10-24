@@ -81,4 +81,4 @@
 - Server unit and feature testing with in-built PHPUnit from Laravel via $ `php artisan test`
 
 # Future Improvements 
-- Import Characters script could be improved to use Laravel Job & Queue. This will import all characters in the background, which would improve performance. 
+- Import & Update Characters script could be improved to use Laravel Job & Queue. This will run the process of importing and updating characters in the background, which would improve performance. 
