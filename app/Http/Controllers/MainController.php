@@ -31,4 +31,8 @@ class MainController extends Controller
         $output = (new MainService())->updateCharactersToDB();
         return view('update_characters', ['output' => $output]);
     }
+
+    public function createCharacter() {
+        return view('create_character');
+    }
 }

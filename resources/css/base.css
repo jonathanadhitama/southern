@@ -13,3 +13,9 @@
 .container-error-southern {
     color: red;
 }
+
+.invalid-field-southern {
+    width: 100%;
+    margin-top: 0.25rem;
+    color: #e3342f;
+}
