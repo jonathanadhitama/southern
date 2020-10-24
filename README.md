@@ -75,6 +75,7 @@
 - To update all characters inside table `swapi_characters` from table `updated_character_data` navigate to: `http://localhost:8000/update_characters`
     - Make sure seeder has been ran first before navigating here, otherwise no character will be updated: $ `php artisan db:seed`
 - To insert a new character into table `swapi_characters` navigate to: `http://localhost:8000/create_character`
+- Log file location: `<project-directory>/storage/logs/laravel.log`
 
 # Testing
 - Server unit and feature testing with in-built PHPUnit from Laravel via $ `php artisan test`
