@@ -60,6 +60,8 @@
     - Client side validation is handled via Formik and Yup
     - Server side validation is handled with Laravel Form Request and calling SWAPI for checking homeworld and species name before DB insertion
     - Added CSRF handling in create character page to prevent XSS attack
+    - All values in the character data sent to the server must be correct for the the record to be inserted into the Database
+    - Any invalid value in the character data will cause the record to not be saved and an alert will show in the page to indicate that it is not saved 
 - Using Laravel query builder for any interactions with Database to prevent SQL injection attack 
 
 # Running the application
