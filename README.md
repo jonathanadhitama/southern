@@ -71,9 +71,13 @@
 - Open web browser
 - To view all character names in the movie Return of the Jedi navigate to: `http://localhost:8000/characters_jedi` 
 - To view all species and their homeworld name in Star Wars film navigate to: `http://localhost:8000/mammal_homeworlds`
-- To import all people from SWAPI into table `swapi_characters` navigate to: `http://localhost:8000/import_characters`
-- To update all characters inside table `swapi_characters` from table `updated_character_data` navigate to: `http://localhost:8000/update_characters`
-    - Make sure seeder has been ran first before navigating here, otherwise no character will be updated: $ `php artisan db:seed`
+- To import all people from SWAPI into table `swapi_characters`:
+    - Run Laravel command: `php artisan import:characters`
+    - Or by navigating to: `http://localhost:8000/import_characters`
+- To update all characters inside table `swapi_characters` from table `updated_character_data`:
+    - Run Laravel command: `php artisan update:characters`
+    - Or by navigating to: `http://localhost:8000/update_characters`
+    - **Important!** Make sure seeder has been ran first before navigating here, otherwise no character will be updated: $ `php artisan db:seed`
 - To insert a new character into table `swapi_characters` navigate to: `http://localhost:8000/create_character`
 - Log file location: `<project-directory>/storage/logs/laravel.log`
 
@@ -81,4 +85,10 @@
 - Server unit and feature testing with in-built PHPUnit from Laravel via $ `php artisan test`
 
 # Future Improvements 
-- Import & Update Characters script could be improved to use Laravel Job & Queue. This will run the process of importing and updating characters in the background, which would improve performance. 
+- Import & Update Characters script could be improved to use Laravel Job & Queue. This will run the process of importing and updating characters in the background, which would improve performance.
+- Import & Update Characters URLs to be secured with 'auth' middleware so that only authenticated users can access them and prevent unauthorised access:
+    - `http://localhost:8000/import_characters`
+    - `http://localhost:8000/update_characters`
+- Adding progress bar and showing additional console output for commands to import and update users:
+     - `php artisan import:characters`
+     - `php artisan update:characters`
