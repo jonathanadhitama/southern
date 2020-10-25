@@ -72,11 +72,11 @@
 - To view all character names in the movie Return of the Jedi navigate to: `http://localhost:8000/characters_jedi` 
 - To view all species and their homeworld name in Star Wars film navigate to: `http://localhost:8000/mammal_homeworlds`
 - To import all people from SWAPI into table `swapi_characters`:
-    - Run Laravel command: `php artisan import:characters`
-    - Or by navigating to: `http://localhost:8000/import_characters`
+    - By navigating to: `http://localhost:8000/import_characters`
+    - Or by running Laravel command: `php artisan import:characters`
 - To update all characters inside table `swapi_characters` from table `updated_character_data`:
-    - Run Laravel command: `php artisan update:characters`
-    - Or by navigating to: `http://localhost:8000/update_characters`
+    - By navigating to: `http://localhost:8000/update_characters`
+    - Or by running Laravel command: `php artisan update:characters`
     - **Important!** Make sure seeder has been ran first before navigating here, otherwise no character will be updated: $ `php artisan db:seed`
 - To insert a new character into table `swapi_characters` navigate to: `http://localhost:8000/create_character`
 - Log file location: `<project-directory>/storage/logs/laravel.log`
