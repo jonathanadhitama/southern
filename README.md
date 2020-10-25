@@ -89,6 +89,6 @@
 - Import & Update Characters URLs to be secured with 'auth' middleware so that only authenticated users can access them and prevent unauthorised access:
     - `http://localhost:8000/import_characters`
     - `http://localhost:8000/update_characters`
-- Adding progress bar and showing additional console output for commands to import and update users:
+- Adding progress bar and showing additional console output for commands to import and update characters:
      - `php artisan import:characters`
      - `php artisan update:characters`
